@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Screenshot Upload App</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .upload-form { margin-bottom: 30px; }
+        .uploads { display: flex; flex-wrap: wrap; gap: 20px; }
+        .upload-item { border: 1px solid #ccc; padding: 10px; border-radius: 8px; width: 250px; }
+        .upload-item img { max-width: 100%; height: auto; border-radius: 4px; }
+        .desc { margin-top: 10px; font-size: 14px; color: #333; }
+    </style>
+</head>
+<body>
+    <h1>Screenshot Upload App</h1>
+    <form class="upload-form" method="POST" enctype="multipart/form-data">
+        <label for="screenshot">Upload Screenshot:</label>
+        <input type="file" name="screenshot" accept="image/*" required><br><br>
+        <label for="description">Project Description:</label><br>
+        <textarea name="description" rows="3" cols="40" placeholder="Write your project description here..." required></textarea><br><br>
+        <button type="submit">Upload</button>
+    </form>
+    <h2>Uploaded Screenshots & Descriptions</h2>
+    <div class="uploads">
+        {% for upload in uploads %}
+        <div class="upload-item">
+            <img src="{{ url_for('static', filename='uploads/' + upload[0]) }}" alt="Screenshot">
+            <div class="desc">{{ upload[1] }}</div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
