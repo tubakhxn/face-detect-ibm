@@ -16,7 +16,7 @@ This project implements a robust face detection system using MobileNetV2 SSD (Te
 - Detection time < 1.5 seconds per frame
 - Reduced false positives from skin-like backgrounds
   <img width="1110" height="806" alt="image" src="https://github.com/user-attachments/assets/979d6a08-bf90-4a0b-b397-06f0c0e63459" />
-  <img width="1110" height="959" alt="image" src="https://github.com/user-attachments/assets/86409d91-8edd-49ed-b70f-a12e0aa8c90e" />
+
 
 
 
